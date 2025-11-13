@@ -176,11 +176,22 @@ button:focus-visible {
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-@layer base {
+/* @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+} */
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body {
+    margin: 0;
+    /* IMPORTANT: do NOT use display:flex/place-items on body */
+    display: block;
+    /* Tailwind-based base colors */
+    @apply bg-white text-gray-700 antialiased;
   }
 }
