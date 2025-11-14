@@ -67,7 +67,7 @@ export default function App() {
          <Navbar />
          {/* <BackImage /> */}
  
-         <main className="flex-1">
+         <main className="flex-1 ">
            <Outlet />
          </main>
      </div>
