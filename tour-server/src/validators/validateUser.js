@@ -1,6 +1,6 @@
 import {check, validationResult }from "express-validator";
 
-export const validateUser = [
+export const validateRegister = [
 
 check("name")
 .notEmpty()
@@ -33,8 +33,8 @@ check ("username")
       check("role")
     .notEmpty()
     .withMessage("role is required")
-    .isIn(["TOURIST", "GUIDE"])
-    .withMessage("role must be TOURIST or GUIDE"),
+    .isIn(["TOURIST", "GUIDE","ADMIN"])
+    .withMessage("Are you trying to find information about your tour, if so please Select Tourist"),
 
 
 ]

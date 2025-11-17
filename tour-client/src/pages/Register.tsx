@@ -19,7 +19,7 @@ function Register() {
       if (res.ok) {
         const data = await res.json();
         alert(data.msg);
-        
+
       } else {
         alert("Something is wrong!");
       }
@@ -45,6 +45,14 @@ function Register() {
           onChange={(e) => setFullname(e.target.value)}
           value={fullname}
         />
+          <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          className="border border-gray-300 w-4/5 h-8 ps-2"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+        />
         <input
           type="text"
           name="username"
@@ -53,18 +61,19 @@ function Register() {
           onChange={(e) => setUsername(e.target.value)}
           value={username}
         />
+      
         <input
+          type="submit"
+          value="Register"
+          className="border border-gray-300 w-4/5 h-8 bg-blue-400 text-white rounded"
+        />
+           <input
           type="password"
           name="password"
           placeholder="Password"
           className="border border-gray-300 w-4/5 h-8 ps-2"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
-        />
-        <input
-          type="submit"
-          value="Register"
-          className="border border-gray-300 w-4/5 h-8 bg-blue-400 text-white rounded"
         />
       </form>
 
