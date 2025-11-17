@@ -36,14 +36,14 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from "dotenv/config";
 import {createError} from "./utilities/helpers";
-// import sequelize from "./utilities/db";
+import sequelize from "./utilities/db";
 import userRouter from "./routes/users";
 
 
 const app = express();
 
 
-// sequelize.sync({alter:true})
+sequelize.sync({alter:true})
 
 
 //-------------------------------

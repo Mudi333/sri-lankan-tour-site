@@ -57,9 +57,6 @@ importers:
       '@types/node':
         specifier: ^24.10.1
         version: 24.10.1
-      '@types/sequelize':
-        specifier: ^6.12.0
-        version: 6.12.0(pg-hstore@2.3.4)(pg@8.16.3)
       nodemon:
         specifier: ^3.1.11
         version: 3.1.11
@@ -151,10 +148,6 @@ packages:
   '@types/send@1.2.1':
     resolution: {integrity: sha512-arsCikDvlU99zl1g69TcAB3mzZPpxgw0UQnaHeC1Nwb015xp8bknZv5rIfri9xTOcMuaVgvabfIRA7PSZVuZIQ==}
 
-  '@types/sequelize@6.12.0':
-    resolution: {integrity: sha512-rJRUf3AkP356HicHSjM2I7+d0FiLvOPZdDxFY0bhmKiZnGOuZZ1cUcDlPyyin9b3pYFvxZfJUTC3nGXLoi6DWA==}
-    deprecated: This is a stub types definition. sequelize provides its own type definitions, so you do not need this installed.
-
   '@types/serve-static@1.15.10':
     resolution: {integrity: sha512-tRs1dB+g8Itk72rlSI2ZrW6vZg0YrLI81iQSTkMmOqnqCaNr/8Ek4VwWcN5vZgCYWbg/JJSGBlUaYGAOP73qBw==}
 
@@ -164,8 +157,8 @@ packages:
   '@types/strip-json-comments@0.0.30':
     resolution: {integrity: sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==}
 
-  '@types/validator@13.15.8':
-    resolution: {integrity: sha512-/NAHBJ0RwpsbLzzbLoLm/GnvCGB+A0/p5S61RUIsh7j3MP2dMkdUbWNdFqnluLlUheAs1CR2GlX2R7uzb7Tc0w==}
+  '@types/validator@13.15.9':
+    resolution: {integrity: sha512-9ENIuq9PUX45M1QRtfJDprgfErED4fBiMPmjlPci4W9WiBelVtHYCjF3xkQNcSnmUeuruLS1kH6hSl5M1vz4Sw==}
 
   accepts@2.0.0:
     resolution: {integrity: sha512-5cvg6CtKwfgdmVqY1WIiXKc3Q1bkRqGLi+2W/6ao+6Y7gu/RCwRuAhGEzh5B4KlszSuTLgZYuqFqo5bImjNKng==}
@@ -970,21 +963,6 @@ snapshots:
     dependencies:
       '@types/node': 24.10.1
 
-  '@types/sequelize@6.12.0(pg-hstore@2.3.4)(pg@8.16.3)':
-    dependencies:
-      sequelize: 6.37.7(pg-hstore@2.3.4)(pg@8.16.3)
-    transitivePeerDependencies:
-      - ibm_db
-      - mariadb
-      - mysql2
-      - oracledb
-      - pg
-      - pg-hstore
-      - snowflake-sdk
-      - sqlite3
-      - supports-color
-      - tedious
-
   '@types/serve-static@1.15.10':
     dependencies:
       '@types/http-errors': 2.0.5
@@ -995,7 +973,7 @@ snapshots:
 
   '@types/strip-json-comments@0.0.30': {}
 
-  '@types/validator@13.15.8': {}
+  '@types/validator@13.15.9': {}
 
   accepts@2.0.0:
     dependencies:
@@ -1531,7 +1509,7 @@ snapshots:
   sequelize@6.37.7(pg-hstore@2.3.4)(pg@8.16.3):
     dependencies:
       '@types/debug': 4.1.12
-      '@types/validator': 13.15.8
+      '@types/validator': 13.15.9
       debug: 4.4.3(supports-color@5.5.0)
       dottie: 2.0.6
       inflection: 1.13.4

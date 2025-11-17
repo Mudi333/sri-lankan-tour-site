@@ -42,141 +42,137 @@
 
 // export default router;
 
-
-
-
-import express from "express"
-import bcrypt from "bcryptjs"
+import express, { Request,Response,NextFunction } from "express";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import {validationResult} from "express-validator"
-import User from "../models/User.js"
-import{validateRegister} from "../validators/validateUser.js"
-import { validateLogin } from "../validators/validateLogin.js"
-import { createError } from "../utilities/helpers.js"
+import { validationResult } from "express-validator";
+import User from "../models/User";
+import { validateRegister } from "../validators/validateUser";
 
+import { validateLogin } from "../validators/validateLogin";
+import { createError } from "../utilities/helpers";
 
-const router = express.Router()
-
+const router = express.Router();
 
 //----------------------------------------------register--------------
 
-
-router.post("/register", validateRegister,async(req:any,res:any,next:any) => {
-  try{
-    const errors = validationResult(req)
-    if (!errors.isEmpty()) {
-      return res.status(400).json({
-        message:errors.array()[0].msg,
-        errors:errors.array(),
-      })
-    }
-    const { name, username, email, password, role } = req.body
-
-    const existing = await User.findOne({
-      where:{email},
-    })
-    if(existing){
-      return res.status(400).json({message: "Email already in use.Do you want to sign in?"})
-    }
-    const existingUsername =await User.findOne({
-      where: { username },
-    })
-    if (existingUsername){
-    return res.status(400).json({message: "please enter differant username"})
-  }
-
-  const hash= await bcrypt.hash(password, 10)
-  
- 
-const user = await User.create({
-  name,
-  username,
-  email,
-  passwordHash: hash,
-  role,
-})
-
-return res.ststus(201).json({
-      msg: "User registered",
-      user: {
-  id:user.id,
-  name:user.name,
-  username: user.username,
-  email: user.email,
-  role: user.role,
-      }
-
-
-})
-  }catch (err) {
-    console.error(err)
-    res.status(500).json({message: "server error"})
- 
-  }
-  });
-  //----------------------------------login-----------------------
-
-
-  router.post("/login", validateLogin, async (req,res,next) => { 
-    try {    const errors = validationResult(req)
-      if(!errors.isEmpty()){
+router.post(
+  "/register",
+  validateRegister,
+  async (req: any, res: any, next: any) => {
+    try {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
         return res.status(400).json({
-   message:errors.array()[0].msg,
-        errors : errors.array(),
-        })
-     
+          message: errors.array()[0].msg,
+          errors: errors.array(),
+        });
       }
-  
- const{ username, password} =req.body
+      const { name, username, email, password, role } = req.body;
 
+      const existing = await User.findOne({
+        where: { email },
+      });
+      if (existing) {
+        return res
+          .status(400)
+          .json({ message: "Email already in use.Do you want to sign in?" });
+      }
+      const existingUsername = await User.findOne({
+        where: { username },
+      });
+      if (existingUsername) {
+        return res
+          .status(400)
+          .json({ message: "please enter differant username" });
+      }
 
-const user =await User.findOne({where: {username}})
-if (!user) {
-  return res.status(400).json({message: "Invalid username or password"})
-}
-const match = await bcrypt.compare(password,user.passwordHash)
-if (!match) {
-  return res.status(400).json ({message:"invalide credintials"})
-}
+      const hash = await bcrypt.hash(password, 10);
 
+      const user = await User.create({
+        name,
+        username,
+        email,
+        passwordHash: hash,
+        role,
+      });
 
-const secret = process.env.JWT_SECRET;
-if (!secret) {
-  return res.status(500).json({ message: "JWT secret not configured" });
-}
+      return res.status(201).json({
+        msg: "User registered",
+        user: {
+          id: user.get("id"),
+          name: user.get("name"),
+          username: user.get("username"),
+          email: user.get("email"),
+          role: user.get("role"),
+        },
+      });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ message: "server error" });
+    }
+  }
+);
+//----------------------------------login-----------------------
 
-const token = jwt.sign(
-  { userId: user.id, role: user.role },
-  secret,
-  { expiresIn: "2h" }
+router.post(
+  "/login",
+  validateLogin,async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(400).json({
+          message: errors.array()[0].msg,
+          errors: errors.array(),
+        });
+      }
+
+      const { username, password } = req.body;
+
+      const user = await User.findOne({ where: { username } });
+      if (!user) {
+        return res
+          .status(400)
+          .json({ message: "Invalid username or password" });
+      }
+      const match = await bcrypt.compare(
+        password,
+        user.get("passwordHash") as string
+      );
+      if (!match) {
+        return res.status(400).json({ message: "invalide credintials" });
+      }
+
+      const secret = process.env.JWT_SECRET;
+      if (!secret) {
+        return res.status(500).json({ message: "JWT secret not configured" });
+      }
+
+      const token = jwt.sign(
+        { userId: user.get("id"), role: user.get("role") },
+        secret,
+        { expiresIn: "2h" }
+      );
+
+      const expiresAt = Date.now() + 2 * 60 * 60 * 1000;
+
+      return res.json({
+        msg: "Login successful",
+        token,
+        expiresAt,
+        user: {
+          id: user.get("id"),
+          name: user.get("name"),
+          username: user.get("username"),
+          email: user.get("email"),
+          role: user.get("role"),
+        },
+      });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ messsage: "Server error" });
+    }
+  }
 );
 
-
-const expiresAt = Date.now() + 2 * 60 * 60 * 1000
-
-return res.json({
-  msg: "Login successful",
-  token,
-  expiresAt,
-  user: {
-    id: user.id,
-    name: user.name,
-    username: user.username,
-    email:user.email,
-    role: user.role,
-  },
-
-
-})
-}catch (err){
-  console.error(err)
-  res.status(500).json({ messsage: "Server error"})
-}
-    
-      })
-   
-
-export default router
-
-
-
+export default router;
