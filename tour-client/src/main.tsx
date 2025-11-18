@@ -11,7 +11,7 @@ import Home from "@/pages/Home";
 import Tours from "@/pages/Tours";
 import Errorpage from "@/pages/ErrorPage";
 
-import Register from "@/pages/Register";
+import Register from "@/pages/shadcnRegister";
 
 const router = createBrowserRouter([
   {

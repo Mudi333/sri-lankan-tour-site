@@ -1,106 +1,104 @@
-// const res = await fetch("http://localhost:4000/users/login", {
-//   method: "POST",
-//   headers: { "Content-Type": "application/json" },
-//   body: JSON.stringify({ username, password }),
-// });
+import React,{ useState } from "react";
 
 
+const Login: React.FC = () => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
 
-import React, { useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import {Card,CardHeader,CardContent, CardTitle } from "@/components/ui/card";
 
-
-
-export default function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-
-    const submitHandler = async (event: React.FormEvent) => {
+const submitHandler = async (event: React.FormEvent) => {
     event.preventDefault();
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("http://localhost:4000/users/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setError(data.message || "Login failed! Please try again.");
-        setLoading(false);
-        return;
-      }
-        
-     localStorage.setItem("token", data.token);
-     localStorage.setItem("expiresAt", data.expiresAt);
-     localStorage.setItem("user", JSON.stringify(data.user));
+        const res = await fetch("http://localhost:4000/users/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password }),
+        });
+        const data = await res.json();
+    
 
-      alert("Login successful!");
 
-         window.location.href = "/";
+   
+        if (!res.ok) {
+            setError(data.message || "Login failed! Please try again.");
+            setLoading(false);
+            return;
+        }
+
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("expiresAt", data.expiresAt);
+        localStorage.setItem("user", JSON.stringify(data.user));
+
+alert("Login successful!");
+
+        window.location.href = "/";
     } catch (err: any) {
-      setError(err.message || "An error occurred. Please try again.");
+        setError(err.message || "An error occurred. Please try again.");
+    }finally {
+        setLoading(false);
     }
+};
 
-      setLoading(false);
-    }
 
-    return 
-
-  return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 px-4">
-      <Card className="w-full max-w-md shadow-xl p-4">
-        <CardHeader>
-          <CardTitle className="text-center text-2xl font-semibold">
-            Sign In
-          </CardTitle>
-        </CardHeader>
-
-        <CardContent>
-          {error && (
-            <p className="text-red-500 text-center mb-4">{error}</p>
-          )}
-
-          <form className="flex flex-col gap-4" onSubmit={submitHandler}>
-            <div>
-              <label className="text-sm">Username</label>
-              <Input
-                type="text"
-                placeholder="Enter your username"
+return ( 
+    <div className="min-h-screen flex items-center justify-center bg-gray ">
+        <div className ="w-full max-w-md bg-white rounded-lg shadow p-6">
+            <h1 className="text-2xl font-semibold text-center mb-4">Sign In</h1>
+            <p>Please enter your username and password.</p>
+            {error && <p className="text-red-500 mb-4">{error}</p>}
+            <form onSubmit={submitHandler} className="space-y-4">
+                <div>
+                    <label className="block text-sm mb-1">Username</label>
+                    <input
+                    type="text"
+                    className="w-full border border-gray-300 rounded px-3 py-2 "
+                placeholder="Your username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-              />
-            </div>
+                required
+            />
+                </div>
+                <div>
+            <label className="block text-sm mb-1">Password</label>
+            <input
+              type="password"
+              className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+              placeholder="Your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
 
-            <div>
-              <label className="text-sm">Password</label>
-              <Input
-                type="password"
-                placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded text-sm disabled:opacity-60"
+          >
+            {loading ? "Signing in..." : "Login"}
+          </button>
 
-            <Button className="w-full mt-2" disabled={loading}>
-              {loading ? "Signing in..." : "Login"}
-            </Button>
-          </form>
 
-          <p className="text-center text-sm mt-4">
-            Don't have an account?{" "}
-            <a href="/register" className="text-blue-600 underline">
-              Register here
-            </a>
-          </p>
-        </CardContent>
-      </Card>
+                    </form>
+
+ <p className="text-center text-sm mt-4 text-gray-600">
+          Don&apos;t have an account?{" "}
+          <a href="/register" className="text-blue-600 underline">
+            Register here
+          </a>
+        </p>
+
+
+                <div>
+        </div>
+
     </div>
-  );
-}
+       </div>
+       );
+};
 
+export default Login;
