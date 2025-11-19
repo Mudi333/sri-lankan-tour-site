@@ -8,10 +8,11 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Home from "@/pages/Home";
-import Tours from "@/pages/Tours";
-import Errorpage from "@/pages/ErrorPage";
+import Tours from "./pages/Tours";
+import Errorpage from "./pages/ErrorPage";
 
-import Register from "@/pages/shadcnRegister";
+import Register from "@/pages/Register";
+import Login from "./pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -20,8 +21,9 @@ const router = createBrowserRouter([
     errorElement: <Errorpage />,
 
     children: [
-      { index: true, element: <Home /> },
+         { index: true, element: <Home /> },
       { path: "tours", element: <Tours /> },
+      { path: "login", element: <Login /> },
       { path: "register", element: <Register /> },
     ],
   },

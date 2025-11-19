@@ -51,11 +51,15 @@ import { validateRegister } from "../validators/validateUser";
 
 import { validateLogin } from "../validators/validateLogin";
 import { createError } from "../utilities/helpers";
+import { authenticate, AuthRequest } from "../middleware/authenticate";
 
 const router = express.Router();
 
-//----------------------------------------------register--------------
-
+//----------------------------------------------test--------------
+router.get("/test", (req, res) => {
+  res.send("Login route works but use POST to login!");
+});
+//---------------------------
 router.post(
   "/register",
   validateRegister,
@@ -174,5 +178,12 @@ router.post(
     }
   }
 );
+// GET /users/me  (protected)
+router.get("/me", authenticate, (req: AuthRequest, res: Response) => {
+  res.json({
+    msg: "Token is valid",
+    userFromToken: req.user,
+  });
+});
 
 export default router;
