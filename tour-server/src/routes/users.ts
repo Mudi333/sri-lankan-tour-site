@@ -52,6 +52,8 @@ import { validateRegister } from "../validators/validateUser";
 import { validateLogin } from "../validators/validateLogin";
 import { createError } from "../utilities/helpers";
 import { authenticate, AuthRequest } from "../middleware/authenticate";
+import { authorize } from "../middleware/authorize";
+
 
 const router = express.Router();
 
@@ -179,11 +181,55 @@ router.post(
   }
 );
 // GET /users/me  (protected)
-router.get("/me", authenticate, (req: AuthRequest, res: Response) => {
-  res.json({
-    msg: "Token is valid",
-    userFromToken: req.user,
-  });
+router.get("/me", authenticate, async (req: AuthRequest, res, next) => {
+  try {
+    const userId = req.user?.userId; // from token payload
+
+    if (!userId) {
+      return res.status(401).json({ error: "Invalid token payload" });
+    }
+
+    const user = await User.findByPk(userId, {
+      attributes: ["id", "name", "username", "email", "role", "createdAt"],
+    });
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    res.json({
+      msg: "Token is valid",
+      user,
+    });
+  } catch (err) {
+    next(err);
+  }
 });
+
+//----------------------------------only admin can get all users-----------------------
+router.get(
+  "/admin-area",
+  authenticate,
+  authorize("ADMIN"),
+(req: AuthRequest,res)=>{
+    res.json({message:'Welcome ADMIN! to the admin area!'});
+});
+router.get(
+  "/tourist-area",
+  authenticate,
+  authorize("TOURIST"),
+  (req: AuthRequest, res) => {
+    res.json({ msg: "Welcome, TOURIST! This is your area." });
+  }
+);
+
+router.get(
+  "/guide-or-admin",
+  authenticate,
+  authorize("GUIDE", "ADMIN"),
+  (req: AuthRequest, res) => {
+    res.json({ msg: "Hello GUIDE/ADMIN, you can see this." });
+  }
+);
 
 export default router;

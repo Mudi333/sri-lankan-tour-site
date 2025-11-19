@@ -12,12 +12,12 @@ export default function Navbar() {
           <NavLink to="/tours" className="hover:underline">
             Tours
           </NavLink>
-          <NavLink to="/register" className="hover:underline">
+          {/* <NavLink to="/register" className="hover:underline">
             Register
           </NavLink>
           <NavLink to="/login" className="hover:underline">
-            Sign in
-          </NavLink>
+          login
+          </NavLink> */}
           <NavLink to="/contact" className="hover:underline">
             Contact
           </NavLink>

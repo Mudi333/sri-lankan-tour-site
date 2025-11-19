@@ -50,6 +50,7 @@ Hero.jsx
 import React from "react"
 import { Button } from "@/components/ui/button"
 import BackImage from "@/components/BackImage"
+import { NavLink } from "react-router-dom";
 
 function Hero() {
   return (
@@ -69,7 +70,11 @@ function Hero() {
 
 
    <div className="mt-10">
-        <Button > Register Now, it’s Free </Button>
+    <NavLink to="/register" className="hover:underline">
+            <Button > Register Now, it’s Free </Button>
+          </NavLink>
+
+
       </div>
       </div>
     </section>
