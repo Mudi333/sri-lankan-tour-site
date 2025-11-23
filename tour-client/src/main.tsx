@@ -1,5 +1,8 @@
 import "leaflet/dist/leaflet.css";
-import "./index.css";
+
+import "@/styles/variables.css";
+import "@/styles/globals.css";
+import "@/styles/layout.css";
 
 import React, { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
@@ -7,12 +10,13 @@ import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
-import Home from "@/pages/Home";
+import Home from "@/pages/Home/Home";
 import Tours from "./pages/Tours";
 import Errorpage from "./pages/ErrorPage";
+import Admin from "./pages/Admin";
 
-import Register from "@/pages/Register";
-import Login from "./pages/Login";
+import Register from "@/pages/Register/Register";
+import Login from "./pages/Login/Login";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +29,7 @@ const router = createBrowserRouter([
       { path: "tours", element: <Tours /> },
       { path: "login", element: <Login /> },
       { path: "register", element: <Register /> },
+       { path: "admin", element: <Admin /> }, 
     ],
   },
 ]);

@@ -41,46 +41,39 @@
 // }
 // export default Hero
 
-
-
-
 // --------------------------------------
 
-Hero.jsx
-import React from "react"
-import { Button } from "@/components/ui/button"
-import BackImage from "@/components/BackImage"
-import { NavLink } from "react-router-dom";
+// import React from "react";
 
-function Hero() {
-  return (
-    // full-bleed hero: spans viewport width even inside centered parents
-    <section className="relative min-h-[70vh] w-screen left-1/2 -translate-x-1/2 overflow-hidden flex items-center">
-      <BackImage />
+// import BackVedio from "@/components/BackVedio";
+// import { NavLink } from "react-router-dom";
 
-      {/* keep content constrained */}
-      <div className="relative z-10 mx-auto max-w-5xl px-4 text-center space-y-6">
-        <h1 className="font-extrabold text-[42px] md:text-[56px] leading-tight">
-          <span className="text-[#9e1241]">Discover Sri Lanka your way:</span>{" "}
-          Personalized plan at your Finger tips.
-        </h1>
-        <p className="text-lg md:text-xl text-black-500">
-          From tea blanketed hills to palm laced shores— Design private journeys that match your rhythm...
-</p>
+// export default function Hero() {
+//   return (
+//     <>
+//     {/* <div className="relative w-full h-screen overflow-hidden"> */}
+//       {/* Background Video */}
+//       {/* <BackVedio /> */}
 
+//       {/* Text on top of the video */}
+//       <div className="absolute inset-0 flex flex-col justify-center items-center text-white px-4 z-10">
+//         <h1 className="text-5xl md:text-6xl font-bold drop-shadow-lg text-center">
+//           Discover Sri Lanka your way
+//         </h1>
 
-   <div className="mt-10">
-    <NavLink to="/register" className="hover:underline">
-            <Button > Register Now, it’s Free </Button>
-          </NavLink>
+//         <p className="text-lg md:text-xl mt-4 drop-shadow-lg text-center max-w-2xl">
+//           Personalized plan at your fingertips. Design journeys that match your
+//           rhythm…
+//         </p>
 
+//         <button className="mt-6 bg-black bg-opacity-60 px-6 py-3 rounded-lg text-white font-medium hover:bg-opacity-80 transition">
+//           Register Now, it’s Free
+//         </button>
+//       </div>
 
-      </div>
-      </div>
-    </section>
-  )
-}
-
-export default Hero
-
-
+//       {/* Optional overlay for darkening the video */}
+//       <div className="absolute inset-0 bg-black/30"></div>
+//     {/* </div> */}
+//     </>
+//   );
+// }
