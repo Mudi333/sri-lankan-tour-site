@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 type Role = "TOURIST" | "GUIDE" | "ADMIN";
 
-const Register: React.FC = () => {
+function Register() {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
