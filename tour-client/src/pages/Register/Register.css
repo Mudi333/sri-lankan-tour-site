@@ -1,0 +1,10 @@
+.form-section{
+    display: flex;
+    background-color: rgb(27, 53, 49);
+
+
+    border-color: black;
+     justify-content: center;
+    align-items: center;
+     min-height: calc(100vh - 180px);
+}

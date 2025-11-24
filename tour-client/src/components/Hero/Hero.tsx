@@ -77,3 +77,25 @@
 //     </>
 //   );
 // }
+
+import { Link } from 'react-router-dom';
+
+function HeroSection() {
+  return (
+
+    <section className="hero-section">
+      <div className="hero-content">
+        <h1>Discover the Magic of Sri Lanka</h1>
+        <p>
+          Handcrafted journeys across golden shores, misty hills, and vibrant
+          cities. Travel with local experts who know every hidden corner.
+        </p>
+        <Link to="/register" className="primary-button">
+        Register,It's free!
+        </Link>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;

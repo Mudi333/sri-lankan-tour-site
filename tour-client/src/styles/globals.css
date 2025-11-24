@@ -24,18 +24,18 @@ body {
   transition: 0.2s ease;
 }
 
-.btn-primary {
+/* .btn-primary {
   background-color: #2563eb;
   color: white;
 }
 
 .btn-primary:hover {
   background-color: #1d4ed8;
-}
+} */
 
 /* Links */
 a {
-  color: #2563eb;
+  color: #08412e;
   text-decoration: none;
 }
 
@@ -47,5 +47,27 @@ a:hover {
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+.primary-button {
+  display: inline-block;
+  padding: 0.7rem 1.8rem;
+  border-radius: 999px;
+  border: none;
+  text-decoration: none;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, #00c4ff, #00f3b0);
+  color: #031018;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 10px 25px rgba(0, 200, 200, 0.45);
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(0, 200, 200, 0.7);
 }
 

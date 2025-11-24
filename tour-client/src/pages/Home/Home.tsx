@@ -1,18 +1,14 @@
 import React from "react";
 import "./Home.css";
+import HeroSection from "@/components/Hero/Hero";
+import Footer from "@/components/Footer/Footer";
 
 const Home = () => {
   return (
     <div className="home">
-      {/* <h1 className="home-title">Discover Sri Lanka Your Way</h1>
+      <HeroSection/>
+      <Footer/>
 
-      <p className="home-text">
-        Personalized plans, local guides, breathtaking adventures.
-      </p>
-
-      <button className="btn btn-primary">
-        Request a Tour
-      </button> */}
     </div>
   );
 };

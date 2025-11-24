@@ -61,7 +61,7 @@ import HomeVideo from "./HomeVideo/HomeVideo";
 export default function App() {
   return (
     <div className="layout">
-      hello
+hello
       <HomeVideo />
       <Header />
 

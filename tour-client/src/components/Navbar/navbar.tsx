@@ -1,38 +1,50 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./Navbar.css"
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur">
-      <div className="w-full mx-auto max-w-7xl px-4 h-16 flex items-center justify-between">
-        <nav className="hidden md:flex gap-6 ">
-          <NavLink to="/" className="hover:underline">
+    <nav className="navbar glass-nav">
+      <ul className="nav-links">
+        <li>
+          <NavLink to="/" className="nav-link">
             Home
           </NavLink>
-          <NavLink to="/tours" className="hover:underline">
-            Tours
+        </li>
+        <li>
+          <NavLink to="/about" className="nav-link">
+            About
           </NavLink>
-          {/* <NavLink to="/register" className="hover:underline">
-            Register
+        </li>
+
+        <li>
+          <NavLink to="/tours" className="nav-link">
+            tours
           </NavLink>
-          <NavLink to="/login" className="hover:underline">
-          login
-          </NavLink> */}
-          <NavLink to="/contact" className="hover:underline">
+        </li>
+
+        <li>
+          <NavLink to="/guides" className="nav-link">
+            Guides
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink to="/contact" className="nav-link">
             Contact
           </NavLink>
-          <NavLink to="/guide" className="hover:underline">
-            guide
-          </NavLink>
-        </nav>
+        </li>
+      </ul>
+    </nav>
+  );
+}
 
-        {/* 
+/* 
         <div className="flex gap-2">
           <Button variant="ghost" onClick={() => setOpenAuth('login')}>Sign in</Button>
           <Button onClick={() => setOpenAuth('register')}>Register</Button>
-        </div> */}
-      </div>
-      {/* <AuthModel mode={openAuth} onOpenChange={setOpenAuth} /> */}
-    </header>
-  );
+        </div> */
+
+{
+  /* <AuthModel mode={openAuth} onOpenChange={setOpenAuth} /> */
 }

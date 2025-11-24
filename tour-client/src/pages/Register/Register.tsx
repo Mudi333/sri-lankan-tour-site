@@ -53,12 +53,12 @@ const Register: React.FC = () => {
   };
 
   return (
-   <div className="absolute top-5 inset-0 flex flex-col justify-center  items-center px-4 z-10 " >
-      <div className="absolute top-5 padding-[10px] min-h-screen flex items-center justify-center bg-gray-100 px-4">
-        <div className="w-full max-w-md bg-white rounded-lg shadow p-6">
-          <h1 className="text-2xl text-black font-semibold text-center mb-4">
+   <div className="form-section" >
+      
+        <div className="form-card">
+          <h2 className="text-2xl text-black font-semibold text-center mb-4">
             Create Account
-          </h1>
+          </h2>
           <p className="text-sm text-gray-600 text-center mb-6">
             Fill in your details to create an account
           </p>
@@ -156,7 +156,7 @@ const Register: React.FC = () => {
           </p>
         </div>
       </div>
-    </div>
+  
   );
 };
 
