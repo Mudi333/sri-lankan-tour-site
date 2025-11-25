@@ -15,20 +15,36 @@ import { authorize } from "../middleware/authorize";
 
 
 
-function CreateJWT(res){
-  const token = jwt.sign(
-        { userId: user.get("id"), role: user.get("role") },
-        secret,
-        { expiresIn: "2h" }
+// function CreateJWT(res){
+//   const token = jwt.sign(
+//         { userId: user.get("id"), role: user.get("role") },
+//         secret,
+//         { expiresIn: "2h" }
 
-      );
-      return token
+//       );
+//       return token
 
 
-}
+// }
 
 
 const router = express.Router();
+
+function createJWT(user: any): string {
+  const secret = process.env.JWT_SECRET;
+  if (!secret) {
+    throw new Error("JWT_SECRET environment variable not defined");
+  }
+
+  return jwt.sign(
+    { userId: user.get("id"), role: user.get("role") },
+    secret,
+    { expiresIn: "2h" }
+  );
+}
+
+
+
 
 //----------------------------------------------test--------------
 router.get("/test", (req, res) => {
@@ -76,7 +92,8 @@ router.post(
         role,
       });
 
-const token =CreateJWT (user)
+      const token = createJWT(user);
+      const expiresAt = Date.now() + 2 * 60 * 60 * 1000;
 
 
       return res.status(201).json({
@@ -138,9 +155,10 @@ router.post(
 
       const expiresAt = Date.now() + 2 * 60 * 60 * 1000;
 
+      const token = createJWT(user);
       return res.json({
         msg: "Login successful",
-        token,
+          token,
         expiresAt,
         user: {
           id: user.get("id"),
