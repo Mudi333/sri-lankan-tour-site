@@ -43,7 +43,7 @@ import userRouter from "./routes/users";
 const app = express();
 const secret = process.env.JWT_SECRET;
  if (!secret) {
-   console.errpr("JWT_SECRET enviromet variable not defined")
+   console.error("JWT_SECRET enviromet variable not defined")
        process.exit(3)
       }
 
