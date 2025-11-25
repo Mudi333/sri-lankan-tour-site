@@ -42,6 +42,15 @@ import userRouter from "./routes/users";
 
 const app = express();
 
+ if (!secret) {
+   console.errpr("JWT_SECRET enviromet variable not defined")
+       process.exit(3)
+      }
+
+
+
+
+
 
 sequelize.sync({alter:true})
 
