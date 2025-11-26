@@ -1,5 +1,7 @@
 import React from 'react'
-import Tourcard from '../TourCards/Tourcard'
+import Tourcard from './Tourcard';
+import "./TourPlan.css";
+
 
 function TourPlan() {
   return (

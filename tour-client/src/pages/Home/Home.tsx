@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.css";
 import HeroSection from "@/components/Hero/Hero";
 import Footer from "@/components/Footer/Footer";
-import TourPlan from "@/components/TourPlan/TourPlan";
+import TourPlan from "@/components/TourCards/TourPlan";
 
 const Home = () => {
   return (
