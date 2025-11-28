@@ -106,7 +106,7 @@
   }
 
   .overlay {
-    display: none;
+    display: flex;
     /* padding-top: 35vh; */
   }
 }
