@@ -37,12 +37,5 @@ export default function Navbar() {
 }
 
 
-/* 
-        <div className="flex gap-2">
-          <Button variant="ghost" onClick={() => setOpenAuth('login')}>Sign in</Button>
-          <Button onClick={() => setOpenAuth('register')}>Register</Button>
-        </div> */
 
-{
-  /* <AuthModel mode={openAuth} onOpenChange={setOpenAuth} /> */
-}
+
