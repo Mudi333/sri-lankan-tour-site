@@ -11,7 +11,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Home from "@/pages/Home/Home";
-import Tours from "./pages/Tours";
+import Tours from "./pages/Tours/Tours";
 import Errorpage from "./pages/ErrorPage";
 import Admin from "./pages/Admin/Admin";
 
