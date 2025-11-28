@@ -1,6 +1,6 @@
 import React from 'react'
 import{Link} from 'react-router-dom'
-import "./TourPlan.css";
+import style from "./TourPlan.module.css";
 
    type TourcardProps ={
         title:string;
@@ -14,10 +14,9 @@ import "./TourPlan.css";
 
 function Tourcard({title,description,tag,img1,img2,to}:TourcardProps) {
   return (
-    
-        <Link to={to} className="tour-card">
-        <div className='tour-card-image-container'>
-            <div className="tour-card-image-strip">
+    <Link to={to} className={style.tour_card}>
+        <div className={style.tour_card_image_container}>
+            <div className={style.tour_card_image_strip}>
                 <img src={img1} alt={title} />
                 <img src={img2} alt={title} />
               
@@ -25,10 +24,10 @@ function Tourcard({title,description,tag,img1,img2,to}:TourcardProps) {
 
 
         </div>
-        <div className='tour-card-body'>
+        <div className={style.tour_card_body}>
             <h3>{title}</h3>
             <p>{description}</p>
-           <span className="tour-tag">{tag}</span>
+           <span className={style.tour_tag}>{tag}</span>
         </div>
         </Link>   
   )

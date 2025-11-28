@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import style from "./Register.module.css"
 
 type Role = "TOURIST" | "GUIDE" | "ADMIN";
 
@@ -53,18 +54,18 @@ function Register() {
   };
 
   return (
-   <div className="form-section" >
+   <div className={style.form_section} >
       
-        <div className="form-card">
-          <h2 className="text-2xl text-black font-semibold text-center mb-4">
+        <div className={style.form_card}>
+          <h2 className={style.heading}>
             Create Account
           </h2>
-          <p className="text-sm text-gray-600 text-center mb-6">
+          <p className={style.para}>
             Fill in your details to create an account
           </p>
 
           {errorMsg && (
-            <p className="text-red-500 text-sm text-center mb-4">{errorMsg}</p>
+            <p className={style.para1}>{errorMsg}</p>
           )}
 
           {successMsg && (

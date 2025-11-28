@@ -1,79 +1,31 @@
-// import React from 'react'
-// import { Outlet } from 'react-router-dom'
-// import Navbar from '@/components/navbar'
-// import "./index.css"
-// import Header from '@/components/Header'
-
-// export default function layout() {
-//   return (
-//     <div className='text-gray-700 text-base  flex flex-col'>
-//       hello from app
-//       <div className='flex flex-col'>
-//     <Header />
-//         <Navbar />
-
-//         <main className='flex-1'>
-//             <Outlet />
-//             </main>
-//    <footer className="border-t text-sm py-6 text-center text-muted-foreground">
-//         © {new Date().getFullYear()} Sri Lankan Tours🌴
-//       </footer>
-//       </div>
-//     </div>
-//   )
-// }
-
-// import React from 'react'
-// import { Outlet } from 'react-router-dom'
-// import Navbar from '@/components/navbar'
-// import './index.css'
-// import Header from '@/components/Header'
-// import BackImage from '@/components/BackImage'
-
-// export default function App() {
-//   return (
-//     // <div className="text-gray-700 text-base min-h-screen flex flex-col bcg-red-50">
-//     <div>
-
-//         <Header/>
-//       {/* Header/Navbar */}
-
-//       <Navbar />
-//       <BackImage />
-
-//       {/* Page content */}
-//       <main className="flex-1">
-//         <Outlet />
-//       </main>
-
-//     </div>
-//   )
-// }
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "@/components/Navbar/navbar";
 
-// import BackVedio from "./components/BackVedio";
+import Navbar from "@/components/Navbar/Navbar";
 import Header from "./components/Header/Header";
-import HomeVideo from "./HomeVideo/HomeVideo";
+// import HomeVideo from "./HomeVideo/HomeVideo";
 
+// import "./styles/globals.css";
+import styles from "./App.module.css";
+import Footer from "./components/Footer/Footer";
 
 export default function App() {
   return (
-    <div className="layout">
-hello
-      <HomeVideo />
-      <Header />
+    <div className={styles.layout}>
+      <video className={styles.backgroundVideo} autoPlay loop muted playsInline>
+        <source src="/videos/ocean-waves.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      {/* <HomeVideo /> */}
 
-      <Navbar />
-      <main className="flex-1">
-        <div className="relative w-full h-screen overflow-hidden">
-          {/* Background Video */}
-          {/* <BackVedio /> */}
+      <div className={styles.overlay}>
+        <Header />
+        <Navbar />
+        <main className={styles.mainContent}>
           <Outlet />
-        </div>
-        {/* <Outlet /> */}
-      </main>
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

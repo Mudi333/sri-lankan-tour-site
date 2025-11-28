@@ -1,4 +1,5 @@
 import React,{ useState } from "react";
+import style from "./Login.module.css"
 
 
 const Login: React.FC = () => {
@@ -46,7 +47,7 @@ alert("Login successful!");
 
 return ( 
     <div className="min-h-screen flex items-center justify-center bg-gray ">
-        <div className ="w-full max-w-md bg-white rounded-lg shadow p-6">
+        <div className ={style.regi_container}>
             <h1 className="text-2xl font-semibold text-center mb-4">Sign In</h1>
             <p>Please enter your username and password.</p>
             {error && <p className="text-red-500 mb-4">{error}</p>}

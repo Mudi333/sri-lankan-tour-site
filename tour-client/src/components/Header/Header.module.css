@@ -2,13 +2,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #4eb8c0;
+  color: #177a81;
   padding: 0.75rem 5vw;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 5;
+  position: fixed;
+  top: 0;
+  left:0;
+  height: 60px;
+  right: 0;
+  z-index: 10;
+  backdrop-filter:blur(12px);
+ 
 }
-.site-logo {
+.site_logo {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -16,22 +22,30 @@
   margin: 2px;
   padding-left: 15px;
 }
+.log_buttons_container {
+  padding: 4px;
+  margin: 3px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-.login-button {
-  padding: 0.4rem 1rem;
+.login_buttons{
+  padding: 0.4rem 2rem;
   border-radius: 999px;
-  border: 1px solid rgba(16, 124, 101, 0.8);
+  border: 5px solid rgba(13, 56, 46, 0.8);
   background: transparent;
-  color: #348f87;
+  color: #052c29;
   text-decoration: none;
   font-size: 0.85rem;
   transition: all 0.2s ease;
+  margin-left: 10px;
 }
 
-.header-logo {
+.header_logo {
   height: 40px;
 }
-.login-button:hover {
+.login_button:hover {
   background: rgba(255, 255, 255, 0.15);
   transform: translateY(-1px);
 }

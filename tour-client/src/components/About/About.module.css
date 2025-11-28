@@ -1,0 +1,10 @@
+.div_container{
+    background-color: rgba(10, 12, 11, 0.4);
+    color: aquamarine;
+    padding:20px;
+    margin: 5rem;
+    border-radius: 2rem;
+    backdrop-filter:blur(12px);
+
+
+}

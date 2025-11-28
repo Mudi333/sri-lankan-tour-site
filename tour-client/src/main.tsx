@@ -13,7 +13,7 @@ import App from "./App";
 import Home from "@/pages/Home/Home";
 import Tours from "./pages/Tours";
 import Errorpage from "./pages/ErrorPage";
-import Admin from "./pages/Admin";
+import Admin from "./pages/Admin/Admin";
 
 import Register from "@/pages/Register/Register";
 import Login from "./pages/Login/Login";

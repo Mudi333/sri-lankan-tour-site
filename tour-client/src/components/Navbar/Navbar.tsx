@@ -1,36 +1,33 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./Navbar.css"
+import style from "./Navbar.module.css";
 
 export default function Navbar() {
   return (
-    <nav className="navbar glass-nav">
-      <ul className="nav-links">
+    <nav className={`${style.navbar} ${style.glass_nav}`}>
+      <ul className={style.nav_links}>
         <li>
-          <NavLink to="/" className="nav-link">
+          <NavLink to="/" className={style.nav_link}>
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/about" className="nav-link">
+          <NavLink to="/about" className={style.nav_link}>
             About
           </NavLink>
         </li>
-
         <li>
-          <NavLink to="/tours" className="nav-link">
-            tours
+          <NavLink to="/tours" className={style.nav_link}>
+            Tours
           </NavLink>
         </li>
-
         <li>
-          <NavLink to="/guides" className="nav-link">
+          <NavLink to="/guides" className={style.nav_link}>
             Guides
           </NavLink>
         </li>
-
         <li>
-          <NavLink to="/contact" className="nav-link">
+          <NavLink to="/contact" className={style.nav_link}>
             Contact
           </NavLink>
         </li>
@@ -38,6 +35,7 @@ export default function Navbar() {
     </nav>
   );
 }
+
 
 /* 
         <div className="flex gap-2">

@@ -1,17 +1,26 @@
 import React from "react";
-import "./Header.css";
+import styles from './Header.module.css';
 import { Link } from "react-router-dom";
 
-const Header: React.FC = () => {
-  return (
-    <header className="header">
-      <div className="Header-left"> <img src="/logo.svg" className="header-logo" alt="logo" />
-      <span className="site-logo">Serendip Tours</span>
-      </div>
 
-      <Link to="/login" className="login-button">
+
+function Header()  {
+  return (
+    <header className={styles.header}>
+      <div className={styles.Header_left}> <img src="/logo.svg" className={styles.header_logo} alt="logo" />
+      <span className={styles.site_logo}>Serendip Tours</span>
+      </div>
+<div className={styles.log_buttons_container}>
+
+   <Link to="/login" className={styles.login_buttons}>
       Login
       </Link>
+       <Link to="/register" className={styles.login_buttons}>
+      Register
+      </Link>
+
+</div>
+   
 
     </header>
   );

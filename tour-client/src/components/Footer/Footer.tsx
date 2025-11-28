@@ -1,9 +1,9 @@
 import React from 'react'
-import "./Footer.css"
+import style from "./Footer.module.css"
 
 function Footer() {
   return (
-    <div className='footer'>Footer
+    <div className={style.footer}>Footer
 
          copy right 2025 
     </div>
