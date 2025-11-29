@@ -11,6 +11,7 @@
   --color-accent: #02b5a3;
   --color-accent-dark: #018c80;
   --color-dark: #022c22;
+  --color-form-button:  linear-gradient(135deg, #00c4ff, #00f3b0);
 }
 
 /* Base */

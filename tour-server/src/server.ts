@@ -38,6 +38,7 @@ import dotenv from "dotenv/config";
 import {createError} from "./utilities/helpers";
 import sequelize from "./utilities/db";
 import userRouter from "./routes/users";
+import guidesRouter from "./routes/guides";
 
 
 const app = express();
@@ -66,6 +67,12 @@ app.use("/users", userRouter);
 
 
 //-----------------------------
+
+app.use("/guides", guidesRouter);
+
+
+
+//------------------------------------
 
 
 app.use((req: Request, res: Response, next: any) => {

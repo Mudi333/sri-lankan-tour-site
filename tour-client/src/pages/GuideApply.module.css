@@ -1,0 +1,150 @@
+.guideApply {
+  padding: 80px 20px;
+}
+
+.guideApplyInner {
+  max-width: 700px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 24px 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.lead {
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.benefitsList {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+}
+
+.benefitsList li {
+  margin-bottom: 4px;
+}
+
+.primaryBtn {
+  display: inline-block;
+  padding: 0.5rem 1.4rem;
+  border-radius: 999px;
+  border: 3px solid rgba(13, 56, 46, 0.8);
+  background: transparent;
+  color: #052c29;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* FORM */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.formLabel {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  gap: 4px;
+}
+
+.input,
+.textarea {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+  font-size: 0.85rem;
+}
+
+.error {
+  color: #b91c1c;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+}
+
+.success {
+  color: #166534;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+}
+
+/* ADMIN LIST */
+
+.appList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.appCard {
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  background: rgba(255, 255, 255, 0.95);
+  font-size: 0.9rem;
+}
+
+.appCard h2 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+}
+
+.appActions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.appActions button {
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.approveBtn {
+  background-color: #16a34a;
+  color: white;
+}
+
+.rejectBtn {
+  background-color: #b91c1c;
+  color: white;
+}
+
+/* simple responsiveness */
+@media (max-width: 768px) {
+  .guideApply {
+    padding: 70px 12px;
+  }
+
+  .guideApplyInner {
+    padding: 20px 18px;
+  }
+}
