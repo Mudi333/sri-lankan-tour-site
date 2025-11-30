@@ -5,7 +5,8 @@ import style from "./TourPlan.module.css";
 
 function TourPlan() {
   return (
-    <section className={style.tours_section} id="tours">
+
+    <section className={style.tour_section_dark} id="tours">
       <h2>Find Your Perfect Journey</h2>
       <div className={style.tours_grid}>
         <Tourcard

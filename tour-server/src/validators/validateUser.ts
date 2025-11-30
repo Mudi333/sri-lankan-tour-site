@@ -30,11 +30,11 @@ check ("username")
     .withMessage("invalid password"),
 
 
-      check("role")
-    .notEmpty()
-    .withMessage("role is required")
-    .isIn(["TOURIST", "GUIDE","ADMIN"])
-    .withMessage("Are you trying to find information about your tour, if so please Select Tourist"),
+    //   check("role")
+    // .notEmpty()
+    // .withMessage("role is required")
+    // .isIn(["TOURIST", "GUIDE","ADMIN"])
+    // .withMessage("Are you trying to find information about your tour, if so please Select Tourist"),
 
 
 ]

@@ -6,14 +6,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <nav className={`${style.navbar} ${style.glass_nav}`}>
-      {/* BURGER BUTTON (Mobile Only)  */}
-      {/* <button className={style.burger} onClick={() => setOpen(!open)}>
-        <img
-          src="/images/burger-bar.png"
-          alt="menu"
-          className={style.burger_icon}
-        />
-      </button> */}
+     
       <button className={style.burger} onClick={() => setOpen(!open)}>
         <span
           className={open ? style.burger_line_open : style.burger_line}

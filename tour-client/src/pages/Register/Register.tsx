@@ -169,14 +169,14 @@
 import React, { useState } from "react";
 import style from "./Register.module.css";
 
-type Role = "TOURIST" | "GUIDE" | "ADMIN";
+// type Role = "TOURIST" | "GUIDE" | "ADMIN";
 
 function Register() {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState<Role>("TOURIST");
+  // const [role, setRole] = useState<Role>("TOURIST");
 
   const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
@@ -191,7 +191,7 @@ function Register() {
       const res = await fetch("http://localhost:4000/users/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, username, email, password, role }),
+        body: JSON.stringify({ name, username, email, password }),
       });
 
       const data = await res.json();
@@ -220,10 +220,10 @@ function Register() {
   };
 
   return (
-    <div className={style.form_section}>
-      <div className={style.form_card}>
-        <h2 className={style.heading}>Create Account</h2>
-        <p className={style.para}>Fill in your details to create an account</p>
+    <div className={style.page_container}>
+      <div className={style.login_card}>
+        <h2 className={style.title}>Create Account</h2>
+        <p className={style.subtitle}>Fill in your details to create an account</p>
 
         {errorMsg && <p className={style.error_msg}>{errorMsg}</p>}
 
@@ -276,28 +276,11 @@ function Register() {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <p className={style.helper_text}>
+            <p className={style.footer_text}>
               At least 6 chars, 1 uppercase, 1 lowercase, 1 number.
             </p>
           </div>
 
-          <div className={style.form_group}>
-            <label className={style.label}>User Type</label>
-            <select
-              className={style.select}
-              value={role}
-              onChange={(e) =>
-                setRole(e.target.value as "TOURIST" | "GUIDE" | "ADMIN")
-              }
-            >
-              <option value="TOURIST">Tourist</option>
-              <option value="GUIDE">Tour guide</option>
-              <option value="ADMIN">Admin</option>
-            </select>
-            <p className={style.helper_text}>
-              Are you searching for a tour or providing tours?
-            </p>
-          </div>
 
           <button
             type="submit"

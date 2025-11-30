@@ -89,7 +89,7 @@ router.post(
         username,
         email,
         passwordHash: hash,
-        role,
+        role:"TOURIST",
       });
 
       const token = createJWT(user);
