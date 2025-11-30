@@ -168,6 +168,7 @@
 
 import React, { useState } from "react";
 import style from "./Register.module.css";
+import { useNavigate } from "react-router-dom";
 
 // type Role = "TOURIST" | "GUIDE" | "ADMIN";
 
@@ -177,6 +178,7 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // const [role, setRole] = useState<Role>("TOURIST");
+  const navigate = useNavigate();
 
   const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
@@ -202,11 +204,14 @@ function Register() {
         return;
       }
 
-      setSuccessMsg("Registration successful! You can now log in.");
+      setSuccessMsg("Registration successful! You can now explore our tours");
 
-      setTimeout(() => {
-        window.location.href = "/login";
-      }, 1000);
+      // setTimeout(() => {
+      //   window.location.href = "/login";
+      // }, 1000);
+
+        navigate("/tours");
+
     } catch (err: unknown) {
       setErrorMsg(
         (err instanceof Error

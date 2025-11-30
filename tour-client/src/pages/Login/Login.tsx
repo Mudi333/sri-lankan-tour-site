@@ -107,12 +107,14 @@
 
 import React, { useState } from "react";
 import style from "./Login.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
   const submitHandler = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -139,7 +141,8 @@ const Login: React.FC = () => {
       localStorage.setItem("user", JSON.stringify(data.user));
 
       alert("Login successful!");
-      window.location.href = "/";
+      // window.location.href = "/";
+        navigate("/tours");
     } catch (err: unknown) {
       setError(
         (err instanceof Error ? err.message : "An error occurred. Please try again.") ||
