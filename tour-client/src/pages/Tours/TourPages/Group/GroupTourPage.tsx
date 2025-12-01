@@ -1,5 +1,5 @@
 import React from 'react'
-import MapTours from "../../../../components/MapTours/MapTours";
+// import MapTours from "../../../../components/MapTours/MapTours";
 import styles from "../../Tours.module.css";
 
 
