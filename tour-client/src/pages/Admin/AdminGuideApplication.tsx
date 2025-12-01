@@ -46,7 +46,7 @@ const AdminGuideApplications: React.FC = () => {
   const updateStatus = async (id: string, action: "approve" | "reject") => {
     try {
       const res = await fetch(
-        `http://localhost:4000/guides/applications/${id}/${action}`,
+        `${import.meta.env.VITE_API_HOST}/guides/applications/${id}/${action}`,
         {
           method: "PATCH",
           headers: {

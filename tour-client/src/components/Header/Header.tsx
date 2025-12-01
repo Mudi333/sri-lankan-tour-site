@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function Header()  {
   return (
     <header className={styles.header}>
-      <div className={styles.Header_left}> <img src="/logo.svg" className={styles.header_logo} alt="logo" />
+      <div className={styles.Header_left}> <img src="/logo2.png" className={styles.header_logo} alt="logo" />
       <span className={styles.site_logo}>Serendip Tours</span>
       </div>
 <div className={styles.log_buttons_container}>

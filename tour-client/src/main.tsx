@@ -25,6 +25,7 @@ import SoloTourPage from "./pages/Tours/TourPages/Solo/SoloTourPage";
 import CoupleTourPage from "./pages/Tours/TourPages/Couple/CoupleTourPage";
 import GroupTourPage from "./pages/Tours/TourPages/Group/GroupTourPage";
 import TourDetailsPage from "./pages/Tours/TourDetailsPage"
+import Contact from "./pages/Contact/Contact"
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,7 @@ const router = createBrowserRouter([
       { path: "/tours/solo", element: <SoloTourPage /> },
       { path: "/tours/group", element: <GroupTourPage /> },
        { path: "/tours", element: <TourDetailsPage /> },
+        { path: "/contact", element: <Contact /> },
 
       
     ],

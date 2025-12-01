@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "./Tours.module.css"
 import { Link } from "react-router-dom";
-// import MapTours from "../../components/MapTours/MapTours";
+import MapTours from "../../components/MapTours/MapTours";
 
 function TourDetailsPage() {
   return (
@@ -56,8 +56,8 @@ function TourDetailsPage() {
           </p>
         </Link>
       </section>
-
-         {/* <MapTours /         <p className={styles.tourDesc}>> */}
+<MapTours  />
+      
     </div>
   )
 }

@@ -29,7 +29,7 @@ export default function Navbar() {
             Home
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink
             to="/about"
             className={style.nav_link}
@@ -37,8 +37,8 @@ export default function Navbar() {
           >
             About
           </NavLink>
-        </li>
-        <li>
+        </li>*/}
+         <li> 
           <NavLink
             to="/tours"
             className={style.nav_link}

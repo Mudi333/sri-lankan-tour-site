@@ -1,5 +1,5 @@
 import React from 'react'
-// import MapTours from "../../../../components/MapTours/MapTours";
+import MapTours from "../../../../components/MapTours/MapTours";
 import styles from "../../Tours.module.css";
 
 
@@ -30,6 +30,7 @@ function GroupTourPage() {
           <li>Day 5: Free day, optionally add a surf lesson.</li>
         </ul>
       </section>
+<MapTours tourIds={["friends_5d"]} />
       </div>);}
 
   
