@@ -18,7 +18,7 @@ const AdminGuideApplications: React.FC = () => {
 
   const fetchApps = async () => {
     try {
-      const res = await fetch("http://localhost:4000/guides/applications", {
+      const res = await fetch(`${import.meta.env.VITE_API_HOST}/guides/applications`, {
         headers: {
           "Content-Type": "application/json",
           // IMPORTANT: here you should add admin token later:

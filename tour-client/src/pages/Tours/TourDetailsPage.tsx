@@ -19,7 +19,7 @@ function TourDetailsPage() {
 
       <section>
           <Link to="/tours/couple" className={`${styles.tourCard} ${styles.couple}`}>
-        <h2>Romantic Coastal Escape</h2>
+        <h2 className={styles.tourCardTitle}>Romantic Coastal Escape</h2>
            <p className={styles.tourTag}>Couples • 3 days • Golden sunsets</p>
             <p className={styles.tourDesc}>
             Relax in charming boutique stays along Sri Lanka’s south coast —
@@ -57,7 +57,7 @@ function TourDetailsPage() {
         </Link>
       </section>
 
-         {/* <MapTours /> */}
+         {/* <MapTours /         <p className={styles.tourDesc}>> */}
     </div>
   )
 }

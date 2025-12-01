@@ -1,9 +1,13 @@
-/* src/pages/Tour.module.css */
+
 
 .tourPage {
   padding: 90px 5vw 40px;
-  background: #2d332f;
-  color:aliceblue
+  /* background: #2d332f; */
+  color:aliceblue;
+   background-color: rgba(10, 12, 11, 0.4);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  font-size: larger;
 }
 
 .tourHeader {
@@ -19,7 +23,7 @@
 .tourSubtitle {
   margin: 0;
   font-size: 0.95rem;
-  color: #374151;
+  color: #c1c8d2;
 }
 
 .tourGrid {
@@ -27,17 +31,18 @@
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 16px;
   margin-bottom: 24px;
+  color:aliceblue;
 }
 
-/* .tourCard {
+.tourCard {
   border-radius: 14px;
   padding: 16px;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+  /* background: rgba(255, 255, 255, 0.9); */
+  /* box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1); */
   text-decoration: none;
   color: inherit;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-} */
+  /* transition: transform 0.15s ease, box-shadow 0.15s ease; */
+}
 
 .tourCard:hover {
   transform: translateY(-3px);
@@ -78,7 +83,7 @@
   height: 420px;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.2);
+  box-shadow: 0 8px 24px rgba(60, 81, 131, 0.2);
 }
 
 .mapLeaflet {
@@ -99,7 +104,7 @@
   background: rgba(255, 255, 255, 0.92);
   border-radius: 16px;
   padding: 20px 22px;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 6px 18px rgba(59, 82, 138, 0.12);
 }
 
 .detailTitle {

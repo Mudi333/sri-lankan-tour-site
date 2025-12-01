@@ -109,6 +109,7 @@ import React, { useState } from "react";
 import style from "./Login.module.css";
 import { useNavigate } from "react-router-dom";
 
+
 const Login: React.FC = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -122,7 +123,7 @@ const Login: React.FC = () => {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:4000/users/login", {
+      const res = await fetch(`${import.meta.env.VITE_API_HOST}/users/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),

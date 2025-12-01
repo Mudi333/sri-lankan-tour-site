@@ -34,7 +34,7 @@ function GuideApplyForm() {
     setSuccess(null);
 
     try {
-      const res = await fetch("http://localhost:4000/guides/apply", {
+      const res = await fetch(`${import.meta.env.VITE_API_HOST}/guides/apply`, {
         method: "POST",
         headers: { "ontent-Type": "application/json" },
         body: JSON.stringify({
