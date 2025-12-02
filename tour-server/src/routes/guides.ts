@@ -8,7 +8,9 @@ const router =express.Router();
 
 router.post( "/apply", async (req:Request,res:Response,next: NextFunction) => {
     try{
-        const {fullName,email,phone,Languages, message } = req.body;
+      console.log(req.body)
+        const {fullName,email,phone,languages, message } = req.body;
+
 
         if (!fullName || !email) {
             return res.status(400).json({msg:"fullname and email are required"} );
@@ -17,7 +19,7 @@ router.post( "/apply", async (req:Request,res:Response,next: NextFunction) => {
             fullName,
             email,
             phone: phone ?? null,
-            languages: Array.isArray (Languages)? Languages :null,
+            languages: Array.isArray (languages)? languages :null,
             message : message ?? null,
 
         })

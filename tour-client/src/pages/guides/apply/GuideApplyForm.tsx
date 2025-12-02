@@ -36,7 +36,7 @@ function GuideApplyForm() {
     try {
       const res = await fetch(`${import.meta.env.VITE_API_HOST}/guides/apply`, {
         method: "POST",
-        headers: { "ontent-Type": "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           fullName,
           email,
@@ -48,9 +48,12 @@ function GuideApplyForm() {
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
+        console.log(data.msg)
         setError(data.msg || "something wetn wrong, Please try again.");
         return;
       }
+
+
 
       setSuccess("Your application has been submitted. Thank you!");
 
@@ -61,6 +64,7 @@ function GuideApplyForm() {
       setMessage("");
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "Network error");
+      console.log(error)
     }
   };
 
