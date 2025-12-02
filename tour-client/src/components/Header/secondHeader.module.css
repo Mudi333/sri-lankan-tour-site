@@ -1,0 +1,85 @@
+.header {
+  width: 100%;
+}
+
+.navbar {
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  background: transparent;
+  z-index: 1000;
+    background: rgba(24, 13, 13, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+/* LEFT LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.logo span {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #064f55;
+}
+
+/* RIGHT SIDE — STACKED LAYOUT */
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* TOP LEVEL BUTTONS */
+.topButtons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.btn {
+  padding: 6px 18px;
+  border-radius: 20px;
+  border: 2px solid #064f55;
+  text-decoration: none;
+  color: #064f55;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #064f55;
+  color: white;
+}
+
+/* BOTTOM LEVEL NAV LINKS */
+.bottomLinks {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.bottomLinks li a {
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #064f55;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.bottomLinks li a:hover {
+  background: rgba(255, 255, 255, 0.35);
+}

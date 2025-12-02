@@ -1,6 +1,4 @@
-
-
-import express, { Request,Response,NextFunction } from "express";
+import express, { Request, Response, NextFunction } from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { validationResult } from "express-validator";
@@ -12,22 +10,6 @@ import { createError } from "../utilities/helpers";
 import { authenticate, AuthRequest } from "../middleware/authenticate";
 import { authorize } from "../middleware/authorize";
 
-
-
-
-// function CreateJWT(res){
-//   const token = jwt.sign(
-//         { userId: user.get("id"), role: user.get("role") },
-//         secret,
-//         { expiresIn: "2h" }
-
-//       );
-//       return token
-
-
-// }
-
-
 const router = express.Router();
 
 function createJWT(user: any): string {
@@ -36,15 +18,10 @@ function createJWT(user: any): string {
     throw new Error("JWT_SECRET environment variable not defined");
   }
 
-  return jwt.sign(
-    { userId: user.get("id"), role: user.get("role") },
-    secret,
-    { expiresIn: "2h" }
-  );
+  return jwt.sign({ userId: user.get("id"), role: user.get("role") }, secret, {
+    expiresIn: "2h",
+  });
 }
-
-
-
 
 //----------------------------------------------test--------------
 router.get("/test", (req, res) => {
@@ -89,12 +66,11 @@ router.post(
         username,
         email,
         passwordHash: hash,
-        role:"TOURIST",
+        role: "TOURIST",
       });
 
       const token = createJWT(user);
       const expiresAt = Date.now() + 2 * 60 * 60 * 1000;
-
 
       return res.status(201).json({
         msg: "User registered",
@@ -116,7 +92,8 @@ router.post(
 
 router.post(
   "/login",
-  validateLogin,async (req: Request, res: Response, next: NextFunction) => {
+  validateLogin,
+  async (req: Request, res: Response, next: NextFunction) => {
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -158,7 +135,7 @@ router.post(
       const token = createJWT(user);
       return res.json({
         msg: "Login successful",
-          token,
+        token,
         expiresAt,
         user: {
           id: user.get("id"),
@@ -205,9 +182,10 @@ router.get(
   "/admin-area",
   authenticate,
   authorize("ADMIN"),
-(req: AuthRequest,res)=>{
-    res.json({message:'Welcome ADMIN! to the admin area!'});
-});
+  (req: AuthRequest, res) => {
+    res.json({ message: "Welcome ADMIN! to the admin area!" });
+  }
+);
 router.get(
   "/tourist-area",
   authenticate,
