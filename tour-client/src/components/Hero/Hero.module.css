@@ -9,14 +9,22 @@
   width: 100%;
   min-height: 40vh;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+ justify-content: center;   /* center inner wrapper horizontally */
+  align-items: center;       /* center inner wrapper vertically */
+
+  text-align: center;        /* center text inside */
   padding: 0 5vw;
   z-index: 10;
+
+}
+.hero_inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 5vw;  /* same side padding as header & mainInner */
 }
 
 .hero_content {
-  max-width: 520px;
+  /* max-width: 520px; */
 }
 
 .hero_content h1 {
@@ -77,3 +85,4 @@
   
 }
 }
+

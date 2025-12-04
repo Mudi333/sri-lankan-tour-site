@@ -20,9 +20,11 @@ export default function App() {
 
       <div className={styles.overlay}>
         <Header />
-        <Navbar />
+        {/* <Navbar /> */}
         <main className={styles.mainContent}>
-          <Outlet />
+          <div className={styles.mainInner}>
+            <Outlet />
+          </div>
         </main>
         <Footer />
       </div>

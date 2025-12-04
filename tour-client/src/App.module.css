@@ -70,7 +70,7 @@
   /* padding-top: ; */
 }
 
-.mainContent {
+/* .mainContent {
   flex: 1;
   padding: 1rem 5vw 3rem;
   overflow-y: auto;
@@ -84,7 +84,31 @@
   scrollbar-width: none;
 
 
+} */
+
+
+
+.mainContent {
+  flex: 1;
+  padding: 1.5rem 0 3rem;   /* ⬅ remove side padding here */
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
 }
+
+/* NEW: same width as Header inner */
+.mainInner {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 5vw;           /* same horizontal padding as header */
+}
+
+
+
+
+
+
+
 
 @media (max-width: 768px) {
   .backgroundVideo {

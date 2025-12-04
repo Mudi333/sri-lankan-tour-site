@@ -1,80 +1,109 @@
-import React from "react";
-import styles from './Header.module.css';
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import styles from "./Header.module.css";
 
+function Header() {
+  const [open, setOpen] = useState(false);
 
-
-function Header()  {
   return (
     <header className={styles.header}>
-      <div className={styles.Header_left}> <img src="/logo2.png" className={styles.header_logo} alt="logo" />
-      <span className={styles.site_logo}>Serendip Tours</span>
+      <div className={styles.inner}>
+        <Link to="/" className={styles.brand}>
+          <img
+            src="/logo2.png"
+            className={styles.header_logo}
+            alt="Serendip Tours logo"
+          />
+          <span className={styles.site_logo}>Serendip Tours</span>
+        </Link>
+
+        <button
+          className={styles.burger}
+          onClick={() => setOpen((prev) => !prev)}
+          aria-label="Toggle navigation"
+        >
+          <span
+            className={open ? styles.burger_line_open_top : styles.burger_line}
+          />
+          <span
+            className={
+              open ? styles.burger_line_open_middle : styles.burger_line
+            }
+          />
+          <span
+            className={
+              open ? styles.burger_line_open_bottom : styles.burger_line
+            }
+          />
+        </button>
+
+        <nav
+          className={`${styles.nav} ${open ? styles.navOpen : ""}`}
+          onClick={() => setOpen(false)}
+        >
+          <ul className={styles.nav_links}>
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.nav_link} ${styles.nav_link_active}`
+                    : styles.nav_link
+                }
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/tours"
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.nav_link} ${styles.nav_link_active}`
+                    : styles.nav_link
+                }
+              >
+                Tours
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/guides/apply"
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.nav_link} ${styles.nav_link_active}`
+                    : styles.nav_link
+                }
+              >
+                Become a Guide
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.nav_link} ${styles.nav_link_active}`
+                    : styles.nav_link
+                }
+              >
+                Contact
+              </NavLink>
+            </li>
+          </ul>
+
+          <div className={styles.auth_buttons}>
+            <Link to="/login" className={styles.login_button}>
+              Login
+            </Link>
+            <Link to="/register" className={styles.login_button_secondary}>
+              Register
+            </Link>
+          </div>
+        </nav>
       </div>
-<div className={styles.log_buttons_container}>
-
-   <Link to="/login" className={styles.login_buttons}>
-      Login
-      </Link>
-       <Link to="/register" className={styles.login_buttons}>
-      Register
-      </Link>
-
-</div>
-   
-
     </header>
   );
-};
+}
 
 export default Header;
-
-
-
-
-
-// ------------------------------
-
-// import React from "react";
-// import { Button } from "@/components/ui/button";
-// import { Link } from "react-router-dom";
-// import "./Header.css";
-
-// function Header() {
-//   return (
-//     <div className="p-4 shadow-smflex justify-between items-center flex px-5">
-//       <img src="/logo.svg" alt="logo" />
-//       <div>
-//         <Link to="/login">
-//           <Button>Login</Button>
-//         </Link>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Header;
-// --------------------
-
-// import React, { useState } from "react";
-// import { Button } from "@/components/ui/button";
-// import { Link } from "react-router-dom";
-// import {getAuth,clearAuth, AuthUser} from "../utils/auth";
-
-// export default function Header() {
-//   const [user,setUser]=useState<AuthUser | null>(null);
-// useEffect(()=>{
-//   const authUser=getAuth();
-//   setUser(auth?.user || null);
-// },[]);
-
-// const handleLogout=()=>{
-//   clearAuth();
-//   setUser(null);
-//   alert("Logged out successfully");
-//   window.location
-// };
-//   return (
-//     <div className="p-4 shadow-sm flex justify-between items-center px-5 bg-white">  
-//       <img src="/logo.svg" alt="logo" /></div>)}
-  
-
