@@ -1,24 +1,52 @@
 import React from "react";
-import style from "./About.module.css";
+import { Section } from "@/components/Layout/Section";
+import { Box } from "@/components/Layout/Boxes";
+import styles from "./About.module.css";
 
 function About() {
   return (
-    <section className={style.section_dark} id="why-us">
-      <div className={style.div_container}>
-        <h2 className={style.section_title}>Why us!</h2>
+    <Section id="why-us">
+      <div className={styles.about_wrapper}>
+        <h2 className={styles.title}>Why Choose Us</h2>
 
-        <p className={style.section_text}>
-          Why Travel with Serendip Shores? From sunrise safaris to sunset sails,
-          our team curates authentic Sri Lankan experiences for every kind of
-          traveler. Enjoy comfortable stays, local cuisine, and guides who treat
-          you like family.
+        <p className={styles.description}>
+          From sunrise safaris to sunset sails, our team curates authentic Sri
+          Lankan experiences for every kind of traveler.  
+          Enjoy comfortable stays, local cuisine, and guides who treat you like family.
         </p>
+
+        <div className={styles.box_grid}>
+          <Box>
+            <h3>🌴 Authentic Experiences</h3>
+            <p>
+              Travel like a local with insider access to hidden gems and cultural
+              traditions.
+            </p>
+          </Box>
+
+          <Box>
+            <h3>🚗 Comfortable Journeys</h3>
+            <p>
+              Modern vehicles, handpicked stays, and seamless planning from start
+              to finish.
+            </p>
+          </Box>
+
+          <Box>
+            <h3>🤝 Trusted Guides</h3>
+            <p>
+              Friendly, certified guides who share stories, history, and real Sri
+              Lankan hospitality.
+            </p>
+          </Box>
+        </div>
       </div>
-    </section>
+    </Section>
   );
 }
 
 export default About;
+
 
 // import React from "react";
 // import style from "./About.module.css"

@@ -1,0 +1,15 @@
+.section {
+  width: 100%;
+  padding: 4rem 0;
+  background-color: rgb(141, 240, 240 ,0.6);  
+    backdrop-filter: blur(5px);
+
+  border-radius: 1%;        /* vertical spacing between sections */
+}
+
+/* Shared width for EVERYTHING (header, hero, home sections) */
+.inner {
+  max-width: 1500px;        /* 👈 your desired width */
+  margin: 0 auto;
+  padding: 0 2rem;          /* same side padding as header/hero */
+}
