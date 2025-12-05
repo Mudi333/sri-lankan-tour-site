@@ -5,15 +5,16 @@ import styles from "./About.module.css";
 
 function About() {
   return (
-    <Section id="why-us">
+    // <Section id="why-us">
+    <>
       <div className={styles.about_wrapper}>
         <h2 className={styles.title}>Why Choose Us</h2>
 
         <p className={styles.description}>
           From sunrise safaris to sunset sails, our team curates authentic Sri
           Lankan experiences for every kind of traveler.  
-          Enjoy comfortable stays, local cuisine, and guides who treat you like family.
-        </p>
+          
+      </p>
 
         <div className={styles.box_grid}>
           <Box>
@@ -41,7 +42,8 @@ function About() {
           </Box>
         </div>
       </div>
-    </Section>
+    {/* </Section> */}
+    </>
   );
 }
 

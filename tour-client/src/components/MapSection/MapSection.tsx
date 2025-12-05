@@ -42,13 +42,14 @@
 
 // export default MapSection
 import React from "react";
-import { Section } from "@/components/Layout/Section";
+// import { Section } from "@/components/Layout/Section";
 import { Box } from "@/components/Layout/Boxes";
 import styles from "./MapSection.module.css";
 
 const MapSection = () => {
   return (
-    <Section id="explore-sri-lanka">
+    // <Section id="explore-sri-lanka">
+    <>
       <h2 className={styles.title}>Explore Sri Lanka</h2>
 
       <div className={styles.grid}>
@@ -80,7 +81,8 @@ const MapSection = () => {
           </ul>
         </Box>
       </div>
-    </Section>
+    {/* </Section> */}
+    </>
   );
 };
 

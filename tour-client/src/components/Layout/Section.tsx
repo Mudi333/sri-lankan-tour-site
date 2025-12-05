@@ -8,9 +8,14 @@ type SectionProps = {
 };
 
 export function Section({ children, id, className }: SectionProps) {
-  return (
+  return (<div class="section-wrapper">
+
+
     <section id={id} className={`${styles.section} ${className ?? ""}`}>
+     
       <div className={styles.inner}>{children}</div>
+   
     </section>
+      </div>
   );
 }

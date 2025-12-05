@@ -99,7 +99,7 @@
 
 /* Description text */
 .description {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   font-size: 1.1rem;
   line-height: 1.7;
@@ -108,7 +108,7 @@
 
 /* Box grid */
 .box_grid {
-  margin-top: 2rem;
+  margin-top: 1rem;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));

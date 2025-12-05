@@ -1,10 +1,35 @@
-.section {
+/* .section {
   width: 100%;
-  padding: 4rem 0;
+  padding: 1rem 0;
   background-color: rgb(141, 240, 240 ,0.6);  
     backdrop-filter: blur(5px);
 
-  border-radius: 1%;        /* vertical spacing between sections */
+  border-radius: 1%; 
+  margin-bottom: 20px;       /* vertical spacing between sections */
+
+.section-wrapper {
+  perspective: 1000px;
+}
+
+
+  .section {
+  width: 100%;
+  padding: 1rem 0;
+  background: rgba(141, 240, 240, 0.6);  /* fixed rgb -> rgba */
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+
+  /* 3D-ish look */
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.15),
+    0 6px 6px rgba(0, 0, 0, 0.10);
+
+  transform: rotateX(2deg) rotateY(-2deg) translateZ(0);
+  transform-style: preserve-3d;
+
+  margin-bottom: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Shared width for EVERYTHING (header, hero, home sections) */
@@ -12,4 +37,10 @@
   max-width: 1500px;        /* 👈 your desired width */
   margin: 0 auto;
   padding: 0 2rem;          /* same side padding as header/hero */
+}
+.section:hover {
+  transform: rotateX(0deg) rotateY(0deg) translateY(-4px);
+  box-shadow:
+    0 18px 30px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.15);
 }
