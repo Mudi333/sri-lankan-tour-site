@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import style from "./Register.module.css";
 import { useNavigate } from "react-router-dom";
+import { Section } from "@/components/Layout/Section";
 
 // type Role = "TOURIST" | "GUIDE" | "ADMIN";
 
@@ -59,6 +60,7 @@ function Register() {
   };
 
   return (
+   <Section> 
     <div className={style.page_container}>
       <div className={style.login_card}>
         <h2 className={style.title}>Create Account</h2>
@@ -135,6 +137,7 @@ function Register() {
         </p>
       </div>
     </div>
+    </Section>
   );
 }
 

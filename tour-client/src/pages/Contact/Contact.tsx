@@ -1,5 +1,6 @@
 import React, { FormEvent } from "react";
 import styles from "./Contact.module.css";
+import { Section } from "@/components/Layout/Section";
 
 const Contact: React.FC = () => {
   const handleSubmit = (e: FormEvent) => {
@@ -9,6 +10,7 @@ const Contact: React.FC = () => {
   };
 
   return (
+    <Section>
     <div className={styles.page}>
       <div className={styles.container}>
         <header className={styles.header}>
@@ -123,6 +125,7 @@ const Contact: React.FC = () => {
         </main>
       </div>
     </div>
+    </Section>
   );
 };
 

@@ -4,11 +4,12 @@ import styles from "./Section.module.css";
 type SectionProps = {
   children: React.ReactNode;
   id?: string;
+    header?: React.ReactNode;
   className?: string;
 };
 
 export function Section({ children, id, className }: SectionProps) {
-  return (<div class="section-wrapper">
+  return (<div className="section-wrapper">
 
 
     <section id={id} className={`${styles.section} ${className ?? ""}`}>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 import styles from "../../GuideApply.module.css";
+import { Section } from "@/components/Layout/Section";
 
 const LANG_OPTIONS = [
   "English",
@@ -69,6 +70,7 @@ function GuideApplyForm() {
   };
 
   return (
+    <Section>
     <section className={styles.guideApply}>
       <div className={styles.guideApplyInner}>
         <h1 className={styles.title}>Guide Application</h1>
@@ -145,6 +147,7 @@ function GuideApplyForm() {
         </form>
       </div>
     </section>
+    </Section>
   );
 }
 

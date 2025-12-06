@@ -39,7 +39,7 @@ tour-card-image-container
 .tours_section h2 {
   font-size: 2.2rem;
   margin-bottom: 40px;
-  color: #171b19;
+  color: #c3e7d5;
   font-weight: 700;
 }
 
@@ -52,7 +52,8 @@ tour-card-image-container
 
 .tour_card {
   text-decoration: none;
-  color: inherit;
+  /* color: inherit; */
+  color: white;
   background: rgb(22, 24, 23);
   border-radius: 12px;
   overflow: hidden;
@@ -114,20 +115,20 @@ tour-card-image-container
 .tour_card_body h3 {
   font-size: 1.2rem;
   margin-bottom: 8px;
-  color: #316d5a;
+  color: #afc1bb;
 }
 
 .tour_card_body p {
   font-size: 0.95rem;
   margin-bottom: 12px;
-  color: #52614c;
+  color: #dbe7d7;
   line-height: 1.4;
 }
 
 .tour_tag {
   display: inline-block;
-  background: #ffe9e9;
-  color: #125348;
+  background: #bbc4d0;
+  color: #100e82;
   padding: 4px 10px;
   border-radius: 20px;
   font-size: 0.8rem;

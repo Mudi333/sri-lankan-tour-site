@@ -1,13 +1,15 @@
 // src/pages/SoloTour.tsx
-import React from "react";
+
 import MapTours from "../../../../components/MapTours/MapTours";
-import styles from "../../Tours.module.css";
+import styles from "../../Toursnew.module.css";
+import { Section } from "@/components/Layout/Section";
 
 
 function SoloTourPage() {
   return (
+  <Section>
     <div className={styles.detailPage}>
-      <section className={styles.detailText}>
+      <Section className={styles.detailText}>
         <h1 className={styles.detailTitle}>Solo Explorer Route</h1>
         <p className={styles.detailTag}>5 Days • Budget friendly • Flexible</p>
         <p>
@@ -31,11 +33,12 @@ function SoloTourPage() {
           <li>Day 4: Train to Ella, viewpoints & small hikes.</li>
           <li>Day 5: Return to Colombo for last-minute shopping.</li>
         </ul>
-      </section>
+      </Section>
 
       {/* map only showing the solo_5d route */}
       <MapTours tourIds={["solo_5d"]} />
     </div>
+    </Section>
   );
 };
 

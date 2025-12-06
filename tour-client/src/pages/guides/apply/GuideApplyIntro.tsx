@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "../../GuideApply.module.css";
+import { Section } from "@/components/Layout/Section";
 
 function GuideApplyIntro() {
   return (
+      <Section>
     <section className={styles.guideApply}>
       <div className={styles.guideApplyInner}>
         <h1 className={styles.tittle}>Become a Tour Guide</h1>
@@ -22,6 +24,7 @@ function GuideApplyIntro() {
         </Link>
       </div>
     </section>
+    </Section>
   );
 }
 

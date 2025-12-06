@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import style from "./Login.module.css";
 import { useNavigate } from "react-router-dom";
+import { Section } from "@/components/Layout/Section";
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState("");
@@ -49,6 +50,7 @@ const Login: React.FC = () => {
   };
 
   return (
+    <Section>
     <div className={style.page_container}>
       <div className={style.login_card}>
         <h1 className={style.title}>Sign In</h1>
@@ -96,6 +98,7 @@ const Login: React.FC = () => {
         </p>
       </div>
     </div>
+    </Section>
   );
 };
 

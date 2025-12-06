@@ -1,16 +1,16 @@
-
+/* 
 
 .tourPage {
   padding: 90px 5vw 40px;
   /* background: #2d332f; */
-  color:aliceblue;
+  /* color:aliceblue;
    background-color: rgba(10, 12, 11, 0.4);
   backdrop-filter: blur(5px);
   border-radius: 20px;
   font-size: larger;
-}
+} */
 
-.tourHeader {
+/* .tourHeader {
   max-width: 800px;
   margin-bottom: 24px;
 }
@@ -32,19 +32,19 @@
   gap: 16px;
   margin-bottom: 24px;
   color:aliceblue;
-}
+} */
 
-.tourCard {
+/* .tourCard {
   border-radius: 14px;
-  padding: 16px;
+  padding: 16px; */
   /* background: rgba(255, 255, 255, 0.9); */
   /* box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1); */
-  text-decoration: none;
-  color: inherit;
+  /* text-decoration: none;
+  color: inherit; */
   /* transition: transform 0.15s ease, box-shadow 0.15s ease; */
-}
 
-.tourCard:hover {
+
+/* .tourCard:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(15, 23, 42, 0.18);
 }
@@ -62,10 +62,10 @@
 .tourDesc {
   font-size: 0.9rem;
   margin-bottom: 8px;
-}
+} */
 
 /* color accents */
-.couple {
+/* .couple {
   border-left: 4px solid #daa520;
 }
 .family {
@@ -76,10 +76,10 @@
 }
 .solo {
   border-left: 4px solid #e74c3c;
-}
+} */
 
 /* map */
-.mapWrapper {
+/* .mapWrapper {
   height: 420px;
   border-radius: 16px;
   overflow: hidden;
@@ -89,10 +89,10 @@
 .mapLeaflet {
   width: 100%;
   height: 100%;
-}
+} */
 
 /* detail pages */
-.detailPage {
+/* .detailPage {
   padding: 90px 5vw 40px;
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
@@ -124,6 +124,127 @@
 
 @media (max-width: 900px) {
   .detailPage {
+    grid-template-columns: 1fr;
+  }
+
+  .tourPage {
+    padding-top: 80px;
+  }
+} 
+.tourPage {
+  padding: 90px 5vw 40px;
+  color: aliceblue;
+  background-color: rgba(10, 12, 11, 0.4);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  font-size: larger;
+}
+
+/* NEW: layout for two horizontal boxes */
+.tourLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* shared 3D-ish glass style for the two boxes */
+.tourTextBox,
+.tourMapBox {
+  background-color: rgba(10, 12, 11, 0.4);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 20px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  transform: translateZ(0);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tourTextBox:hover,
+.tourMapBox:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 35px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* keep your existing header styles */
+.tourHeader {
+  max-width: 800px;
+  margin-bottom: 24px;
+}
+
+/* GRID for the cards (now inside the left box) */
+.tourGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  margin-bottom: 0;
+  color: aliceblue;
+}
+
+/* cards with slight elevation */
+.tourCard {
+  border-radius: 14px;
+  padding: 16px;
+  text-decoration: none;
+  color: inherit;
+  background-color: rgba(20, 24, 22, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tourCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.55);
+}
+
+/* keep your existing accent borders */
+.couple {
+  border-left: 4px solid #daa520;
+}
+.family {
+  border-left: 4px solid #1e90ff;
+}
+.group {
+  border-left: 4px solid #2ecc71;
+}
+.solo {
+  border-left: 4px solid #e74c3c;
+}
+
+/* map */
+.mapWrapper {
+  height: 100%;
+  min-height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(60, 81, 131, 0.4);
+}
+
+.mapLeaflet {
+  width: 100%;
+  height: 100%;
+}
+.imageContainer {
+  max-width: 300px;      /* or whatever size you want */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.image {
+  display: block;
+  width: 100%;           /* makes the image follow the container width */
+  height: auto;          /* keeps aspect ratio */
+}
+
+/* responsive: stack boxes vertically on small screens */
+@media (max-width: 900px) {
+  .tourLayout {
     grid-template-columns: 1fr;
   }
 

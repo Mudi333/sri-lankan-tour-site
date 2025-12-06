@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
- background-color: rgba(10, 12, 11, 0.4);
+ background-color:transparent;
   padding: 1.5rem;
   border-radius: 5%;
   margin-top: 50px;
@@ -12,7 +12,7 @@
 
 /* Card */
 .login_card {
-  background-color: rgba(10, 12, 11, 0.4);
+  background-color: rgba(247, 249, 248, 0.4);
   border-radius: 5%;
   width: 100%;
   max-width: 420px;
@@ -81,7 +81,7 @@
 }
 
 .input:focus {
-  border-color: #2563eb;
+  border-color: #1d6f26;
   box-shadow: 0 0 0 1px #2563eb33;
 }
 
@@ -102,7 +102,7 @@ background: linear-gradient(135deg, #00c4ff, #00f3b0);
 }
 
 .submit_btn:hover:not(:disabled) {
-  background: #1d4ed8;
+  background:linear-gradient(135deg, #15c3f8, #a0f6de58);
   transform: translateY(-1px);
   box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
 }
