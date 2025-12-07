@@ -78,7 +78,7 @@ function GuideApplyForm() {
           Please fill in this short form to apply as a guide. Our team will
           review your information and get back to you.
         </p>
-        LANG_OPTIONS
+        {/* LANG_OPTIONS */}
         {error && <p className={styles.error}>{error}</p>}
         {success && <p className={styles.success}>{success}</p>}
         <form className={styles.form} onSubmit={submitHandler}>

@@ -79,7 +79,7 @@ function TourDetailsPage() {
         <div className={styles.tourMapBox}>
           <div className={styles.mapWrapper}>
             {/* <MapTours /> */}
-            <MapTours tourIds={["solo_5d"]} />
+            <MapTours  />
           </div>
         </div>
       </div>

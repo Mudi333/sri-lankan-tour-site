@@ -3,7 +3,7 @@ import MapTours from "../../../../components/MapTours/MapTours";
 import styles from "../../Toursnew.module.css";
 import { Section } from "@/components/Layout/Section";
 
-const GroupTourPage: React.FC = () => {
+function  GroupTourPage ()  {
   return (
     <Section>
       <div className={styles.detailPage}>
