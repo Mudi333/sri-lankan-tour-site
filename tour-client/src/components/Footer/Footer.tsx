@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div className={style.footer}>Footer
 
-         copy right 2025 
+         copy right 2025@ Tourly.com
     </div>
   )
 }
