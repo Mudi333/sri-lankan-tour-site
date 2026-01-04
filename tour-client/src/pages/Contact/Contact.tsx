@@ -42,6 +42,7 @@ const Contact: React.FC = () => {
               <div className={styles.infoItem}>
                 <h3>Email</h3>
                 <p>info@srilankantoursite.com</p>
+                <p>https://www.youtube.com/watch?v=eq2qtpU1Ox4</p>
               </div>
 
               <div className={styles.infoItem}>
